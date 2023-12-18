@@ -67,14 +67,26 @@ const animatePageTransition = e => {
 }
 
 const handleMouseMove = e => {
-    light.x = e.clientX
-    light.y = e.clientY
+    const screenshots = document.querySelectorAll('.screenshot')
+    
+    screenshots.forEach(ss => {
+        if(e.target == ss) {
+            window.requestAnimationFrame(() => animateScreenshot(e.clientX, e.clientY, ss))
+        }
+
+        ss.addEventListener('mouseleave', () => ss.style.transform = 'rotateX(0deg) rotateY(0deg)')
+    })
+
+    light.x = e.pageX
+    light.y = e.pageY
 
    root.setProperty('--light-x', `${light.x}px`)
    root.setProperty('--light-y', `${light.y}px`)
 
-   cursor.style.left = `${light.x}px`
-   cursor.style.top = `${light.y}px`
+   if(cursor) {
+       cursor.style.left = `${light.x}px`
+       cursor.style.top = `${light.y}px`
+   }
 }
 
 const handlePasscodeSubmit = e => {
@@ -90,9 +102,9 @@ const handlePasscodeSubmit = e => {
 }
 
 const navigate = e => {
-    if (e.target.matches('.link')) {
-        animatePageTransition(e)
-    }
+    if (!e.target.matches('.link')) return
+        
+    animatePageTransition(e)
 }
 
 const animate = () => {
@@ -124,8 +136,6 @@ const authenticate = () => {
 }
 
 const init = () => {
-    console.log("init")
-    // if(!isLoggedIn()) window.location.replace('#welcome')
     authenticate()
     router()
     resize()
@@ -133,6 +143,16 @@ const init = () => {
         squares.push(new Box())
     }
     animate()
+}
+
+const animateScreenshot = (x, y, el) => {
+    const box = el.getBoundingClientRect()
+    const calcX = -(y - box.y - (box.height / 2)) / 10
+    const calcY = (x - box.x - (box.width / 2)) / 10
+
+    console.log(calcX)
+
+    el.style.transform = `rotateX(${calcX}deg) rotateY(${calcY}deg)`
 }
 
 window.addEventListener("hashchange", router)
