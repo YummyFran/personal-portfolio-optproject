@@ -939,6 +939,11 @@ body {
 
     .homepage {
 
+        nav .navlinks:has(+ .show-nav) {
+            width: 100vw;
+            left: 0;
+        }
+
         section#projects {
             .project {
                 flex-direction: column;
