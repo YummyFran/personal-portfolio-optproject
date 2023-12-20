@@ -103,7 +103,7 @@ const handlePasscodeSubmit = e => {
         
         localStorage.setItem('isLoggedIn', 'true')
         localStorage.setItem('user-name', name.value)
-        animatePageTransition('/')
+        animatePageTransition('../')
     } else {
         message.innerText = 'Incorrect Passcode'
     }
@@ -112,7 +112,7 @@ const handlePasscodeSubmit = e => {
 const logout = () => {
     localStorage.removeItem('isLoggedIn')
     localStorage.removeItem('user-name')
-    animatePageTransition('/')
+    animatePageTransition('../')
 }
 
 const handleClick = e => {
