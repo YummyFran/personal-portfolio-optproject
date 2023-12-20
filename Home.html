@@ -1,0 +1,277 @@
+<div class="homepage">
+    <nav>
+        <a href="/" class="tagname">
+            <div class="logo">YF</div>
+            <div class="brand">Yummy Fran</div>
+        </a>
+        <ul class="navlinks">
+            <div class="close">&times;</div>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Works</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <div class="logout" onclick="logout()">Sign out</div>
+        </ul>
+        <div class="menu">
+            <div class="burger"></div>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="timeline"></div>
+        <header class="container">
+            <span class="pseudo">Home /></span>
+            <p class="line first">Hi <span id="user-name"></span>, I'm</p>
+            <h1 class="line">Yummy Fran Palomares</h1>
+            <p class="subheading line last">I design and develop <span id="activity">things</span></p>
+            <a href="#projects" class="cta">Projects</a>
+        </header>
+    </section>
+    <section id="projects">
+        <div class="timeline"></div>
+        <div class="container">
+            <span class="pseudo">Works /></span>
+            <div class="project">
+                <div class="screenshot catland"></div>
+                <div class="details">
+                    <div class="sticky-content">
+                        <h3 class="title">CatLand</h3>
+                        <div class="description">
+                            Cat Land is a project that displays informations about different cat breeds. This was my first React project that uses React Router and API calls.
+                        </div>
+                        <div class="actions">
+                            <a href="https://yummyfran.github.io/catland/#/cats" target="_blank" class="demo">Demo</a>
+                            <a href="https://github.com/YummyFran/catland" target="_blank" class="source">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="screenshot iplay"></div>
+                <div class="details">
+                    <div class="sticky-content">
+                        <h3 class="title">iPlay</h3>
+                        <div class="description">
+                            iPlay is my clone version of the mobile application "WePlay". It uses Firebase Authentication and Firestore for user data handling.
+                        </div>
+                        <div class="actions">
+                            <a href="https://yummyfran.github.io/iPlay/#/" target="_blank" class="demo">Demo</a>
+                            <a href="https://github.com/YummyFran/iPlay" target="_blank" class="source">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="screenshot calculator"></div>
+                <div class="details">
+                    <div class="sticky-content">
+                        <h3 class="title">Calculator</h3>
+                        <div class="description">
+                            A basic Programmer's Calculator with basic calculation and convertion functionalities.
+                        </div>
+                        <div class="actions">
+                            <a onclick="window.open('../component/calculator.html', 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=310,height=480')" class="demo">Demo</a>
+                            <a href="https://github.com/YummyFran/calculator-js" target="_blank" class="source">Source Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <div class="timeline"></div>
+        <div class="container">
+            <span class="pseudo">About /></span>
+            <div class="me">
+                <div class="details">
+                    <div class="sticky-content">
+                        <div class="heading">
+                            <h1 class="header">The hero with unique superpowers</h1>
+                            <h2 class="subheader">Code, design, animate, and beyond.</h2>
+                        </div>
+                        <p>
+                            My name is Yummy Fran Palomares, a developer, designer, and a writer in heart.
+                        </p>
+                        <p>
+                            In the realm of zeroes and ones, I'm a storyteller crafting intricate narratives through programming languages. From elegant algorithms to user-centric designs, I thrive on sculpting digital landscapes that enrich and simplify.
+                        </p>
+                    </div>
+                </div>
+                <div class="picture"></div>
+            </div>
+            <div class="school">
+                <div class="heading">
+                    <h1 class="header">Schooling Chapters</h1>
+                    <h2 class="subheader">Pages from My Academic Tale</h2>
+                </div>
+                <div class="educations">
+                    <div class="education">
+                        <div class="level">College</div>
+                        <div class="place">Cordova Public College</div>
+                        <div class="taken">Bachelor of Science in Information Technology</div>
+                        <div class="year">2023 - now</div>
+                    </div>
+                    <div class="education">
+                        <div class="level">Tertiary</div>
+                        <div class="place">Mactan National High School - SHS</div>
+                        <div class="taken">Computer System Servicing</div>
+                        <div class="year">2020 - 2022</div>
+                    </div>
+                    <div class="education">
+                        <div class="level">Secondary</div>
+                        <div class="place">Mactan National High School</div>
+                        <div class="taken">Technical Drafting</div>
+                        <div class="year">2016 - 2020</div>
+                    </div>
+                    <div class="education">
+                        <div class="level">Elementary</div>
+                        <div class="place">Mactan Elementary School</div>
+                        <div class="year">2010 - 2016</div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills">
+                <div class="heading">
+                    <h1 class="header">Powers &amp; Potentials</h1>
+                    <h2 class="subheader">A Hero's Skillset</h2>    
+                </div>
+                <div class="skill">
+                    <div class="illustration">
+                        <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/Front End.svg" alt="front end">
+                    </div>
+                    <div class="skillset">
+                        <div class="sticky-content">
+                            <h3 class="title">Front End</h3>
+                            <div class="icons">
+                                <div class="icon">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/react-js-icon.svg" alt="React JS">
+                                    <span>React JS</span>
+                                </div>
+                                <div class="icon">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/javascript-programming-language-icon.svg" alt="JS">
+                                    <span>Javascript/ ES6</span>
+                                </div>
+                                <div class="icon">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/html5-balck-icon.svg" alt="HTML 5">
+                                    <span>HTML 5</span>
+                                </div>
+                                <div class="icon css">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/css3-svgrepo-com (1).svg" alt="CSS 3">
+                                    <span>CSS 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="illustration">
+                        <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/State Management.svg" alt="">
+                    </div>
+                    <div class="skillset">
+                        <div class="sticky-content">
+                            <h3 class="title">State Management</h3>
+                            <div class="icons">
+                                <div class="icon">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/redux-icon.svg" alt="Redux">
+                                    <span>Redux</span>
+                                </div>
+                                <div class="icon">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/react-query-icon.svg" alt="React Query">
+                                    <span>Tanstack/ React Query</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="illustration">
+                        <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/UI Libraries.svg" alt="">
+                    </div>
+                    <div class="skillset">
+                        <div class="sticky-content">
+                            <h3>UI Libraries</h3>
+                            <div class="icons">
+                                <div class="icon">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/material-ui-svgrepo-com.svg" alt="Material UI">
+                                    <span>Material UI</span>
+                                </div>
+                                <div class="icon">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/tailwind-css-svgrepo-com.svg" alt="Tailwind CSS">
+                                    <span>Tailwind CSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <div class="illustration">
+                        <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/Tools.svg" alt="">
+                    </div>
+                    <div class="skillset">
+                        <div class="sticky-content">
+                            <h3>Tools</h3>
+                            <div class="icons">
+                                <div class="icon">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/git-svgrepo-com.svg" alt="Git">
+                                    <span>Git</span>
+                                </div>
+                                <div class="icon">
+                                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/svgs/figma-svgrepo-com.svg" alt="Figma">
+                                    <span>Figma</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery">
+        <div class="timeline"></div>
+        <div class="container">
+            <span class="pseudo">Gallery /></span>
+            <div class="heading">
+                <h1 class="header">If I'm not coding, <span><s>I'm doing something else</s></span></h1>
+                <h2 class="subheader">I'm saving the world</h2>
+            </div>
+            <div class="pictures">
+                <div class="column">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g1.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g2.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g3.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g4.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g5.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g6.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g7.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g14.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g8.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g9.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g10.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g11.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g12.jpg" alt="">
+                    <!-- <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g13.jpg" alt=""> -->
+                </div>
+                <div class="column">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g15.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g16.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g17.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g18.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g19.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g20.jpg" alt="">
+                    <img src="https://yummyfran.github.io/personal-portfolio-optproject/assets/g21.jpg" alt="">
+                </div>
+            </div>
+            <div class="video">
+                <div class="heading">
+                    <h1 class="header">Tunes of Triumph</h1>
+                    <h2 class="subheader">The Hero's Crescendo</h2>
+                </div>
+                <iframe class="bink_sake" src="https://www.youtube.com/embed/46SJtTC23yE?si=eTgww6gHA58VY1CV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <footer>
+        Yummy Fran Palomares &copy; 2023
+    </footer>
+</div>
