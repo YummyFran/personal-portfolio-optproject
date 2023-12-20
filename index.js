@@ -11,6 +11,7 @@ const PASSCODE = "manifestflat1"
 const MAX_SQUARES = 8
 
 let isAnimating = true
+let currentActivity = 0
 let squares = []
 let light = {
     x: innerWidth / 2,
@@ -102,7 +103,8 @@ const handlePasscodeSubmit = e => {
     if(password.value == PASSCODE) {
         
         localStorage.setItem('isLoggedIn', 'true')
-        localStorage.setItem('user-name', name.value)
+        localStorage.setItem('user-name', name.value[0].toUpperCase() + name.value.slice(1))
+        // animatePageTransition('/')
         animatePageTransition('https://yummyfran.github.io/personal-portfolio-optproject/')
     } else {
         message.innerText = 'Incorrect Passcode'
@@ -112,6 +114,7 @@ const handlePasscodeSubmit = e => {
 const logout = () => {
     localStorage.removeItem('isLoggedIn')
     localStorage.removeItem('user-name')
+    // animatePageTransition('/')
     animatePageTransition('https://yummyfran.github.io/personal-portfolio-optproject/')
 }
 

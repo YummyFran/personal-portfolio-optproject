@@ -436,6 +436,14 @@ body {
                     #activity {
                         color: var(--midtone);
                         font-weight: 800;
+                        animation: alternatingOpacity 3s ease-in-out forwards infinite;
+
+                        &::after {
+                            content: 'things';
+                            color: inherit;
+                            font-weight: inherit;
+                            animation: changeText 18s ease-in-out forwards infinite;
+                        }
                     }
 
                     &.first {

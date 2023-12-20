@@ -44,3 +44,17 @@
         transform: translateX(-5%);
     }
 }
+
+@keyframes changeText {
+   0%, 100% { content: 'things';}
+   16.667% { content: 'websites';}
+   33.334% { content: 'mobile apps';}
+   50.001% { content: 'games';}
+   66.668% { content: 'ux/ui';}
+   83.335% { content: 'motion';}
+}
+
+@keyframes alternatingOpacity {
+    0%, 100% { opacity: 1;}
+    40%, 60% { opacity: 0;}
+}
