@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programmer's Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="outputs">
+            <h3>Programmer</h3>
+            <input type="text" id="operationScreen" readonly>
+            <input type="text" id="mainScreen" value="0" readonly>
+            <div class="convertions">
+                <div class="convertion" id="hex">
+                    <span class="numberSystem">HEX</span>
+                    <span id="hexValue">0</span>
+                </div>
+                <div class="convertion active" id="dec">
+                    <span class="numberSystem">DEC</span>
+                    <span id="decValue">0</span>
+                </div>
+                <div class="convertion" id="oct">
+                    <span class="numberSystem">OCT</span>
+                    <span id="octValue">0</span>
+                </div>
+                <div class="convertion" id="bin">
+                    <span class="numberSystem">BIN</span>
+                    <span id="binValue">0</span>
+                </div>
+            </div>
+        </div>
+        <div class="inputs">
+            <button class="printable digit" value="A">A</button>
+            <button class="fn"><<</button>
+            <button class="fn">>></button>
+            <button class="clear fn" onclick="clearScreen()">C</button>
+            <button class="del fn" onclick="del()">del</button>
+
+            <button class="printable digit" value="B">B</button>
+            <button class="printable operator" value="(">(</button>
+            <button class="printable operator" value=")">)</button>
+            <button class="printable operator" value="%">%</button>
+            <button class="printable operator" value="/">÷</button>
+
+            <button class="printable digit" value="C">C</button>
+            <button class="printable digit" value="7">7</button>
+            <button class="printable digit" value="8">8</button>
+            <button class="printable digit" value="9">9</button>
+            <button class="printable operator" value="*">×</button>
+
+            <button class="printable digit" value="D">D</button>
+            <button class="printable digit" value="4">4</button>
+            <button class="printable digit" value="5">5</button>
+            <button class="printable digit" value="6">6</button>
+            <button class="printable operator" value="-">-</button>
+
+            <button class="printable digit" value="E">E</button>
+            <button class="printable digit" value="1">1</button>
+            <button class="printable digit" value="2">2</button>
+            <button class="printable digit" value="3">3</button>
+            <button class="printable operator" value="+">+</button>
+
+            <button class="printable digit" value="F">F</button>
+            <button class="negate fn">+/-</button>
+            <button class="printable digit" value="0">0</button>
+            <button class="printable" value="." disabled>.</button>
+            <button class="calculate printable" value="=" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>

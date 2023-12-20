@@ -1,21 +1,26 @@
 <div class="homepage">
     <nav>
-        <div class="tagname">
+        <a href="/" class="tagname">
             <div class="logo">YF</div>
             <div class="brand">Yummy Fran</div>
-        </div>
+        </a>
         <ul class="navlinks">
+            <div class="close">&times;</div>
             <li><a href="#home">Home</a></li>
             <li><a href="#projects">Works</a></li>
             <li><a href="#about">About Me</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <div class="logout" onclick="logout()">Sign out</div>
         </ul>
+        <div class="menu">
+            <div class="burger"></div>
+        </div>
     </nav>
     <section id="home">
         <div class="timeline"></div>
         <header class="container">
             <span class="pseudo">Home /></span>
-            <p class="line first">Hi, I'm</p>
+            <p class="line first">Hi <span id="user-name"></span>, I'm</p>
             <h1 class="line">Yummy Fran Palomares</h1>
             <p class="subheading line last">I design and develop <span id="activity">things</span></p>
             <a href="#projects" class="cta">Projects</a>
@@ -64,7 +69,7 @@
                             A basic Programmer's Calculator with basic calculation and convertion functionalities.
                         </div>
                         <div class="actions">
-                            <a href="https://yummyfran.github.io/calculator-js/" target="_blank" class="demo">Demo</a>
+                            <a onclick="window.open('../component/calculator.html', 'targetWindow', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=310,height=480')" class="demo">Demo</a>
                             <a href="https://github.com/YummyFran/calculator-js" target="_blank" class="source">Source Code</a>
                         </div>
                     </div>
@@ -245,7 +250,7 @@
                     <img src="../assets/g10.jpg" alt="">
                     <img src="../assets/g11.jpg" alt="">
                     <img src="../assets/g12.jpg" alt="">
-                    <img src="../assets/g13.jpg" alt="">
+                    <!-- <img src="../assets/g13.jpg" alt=""> -->
                 </div>
                 <div class="column">
                     <img src="../assets/g15.jpg" alt="">
@@ -257,9 +262,16 @@
                     <img src="../assets/g21.jpg" alt="">
                 </div>
             </div>
+            <div class="video">
+                <div class="heading">
+                    <h1 class="header">Tunes of Triumph</h1>
+                    <h2 class="subheader">The Hero's Crescendo</h2>
+                </div>
+                <iframe class="bink_sake" src="https://www.youtube.com/embed/46SJtTC23yE?si=eTgww6gHA58VY1CV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
     <footer>
-
+        Yummy Fran Palomares &copy; 2023
     </footer>
 </div>

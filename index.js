@@ -10,6 +10,7 @@ const PAGE_TITLE = "Yummy Fran Palomares"
 const PASSCODE = "manifestflat1"
 const MAX_SQUARES = 8
 
+let isAnimating = true
 let squares = []
 let light = {
     x: innerWidth / 2,
@@ -33,7 +34,7 @@ const routes = {
 
 const router = async () => {
     const location = window.location.hash.replace("#", "")
-    const path = location.length == 0 || ['/index.html', 'home'].includes(location) ? '/' : location
+    const path = location.length == 0 || ['/index.html', 'home', 'projects', 'about', 'gallery'].includes(location) ? '/' : location
     
     if (!routes[path]) return
 
@@ -42,6 +43,8 @@ const router = async () => {
 
     app.innerHTML = html
     document.title = title
+    const renderName = document.getElementById('user-name')
+    if(renderName) renderName.innerText = localStorage.getItem('user-name')
 }
 
 const animatePageTransition = e => {
@@ -74,7 +77,9 @@ const handleMouseMove = e => {
             window.requestAnimationFrame(() => animateScreenshot(e.clientX, e.clientY, ss))
         }
 
-        ss.addEventListener('mouseleave', () => ss.style.transform = 'rotateX(0deg) rotateY(0deg)')
+        ss.addEventListener('mouseleave', () => {
+            ss.style.transform = 'rotateX(0deg) rotateY(0deg)'
+        })
     })
 
     light.x = e.pageX
@@ -92,24 +97,40 @@ const handleMouseMove = e => {
 const handlePasscodeSubmit = e => {
     event.preventDefault()
     const [name, password] = document.querySelectorAll('.auth-input')
+    const message = document.getElementById('message')
 
     if(password.value == PASSCODE) {
+        
         localStorage.setItem('isLoggedIn', 'true')
+        localStorage.setItem('user-name', name.value)
         animatePageTransition('/')
     } else {
-        alert("no")
+        message.innerText = 'Incorrect Passcode'
     }
 }
 
-const navigate = e => {
-    if (!e.target.matches('.link')) return
-        
-    animatePageTransition(e)
+const logout = () => {
+    localStorage.removeItem('isLoggedIn')
+    localStorage.removeItem('user-name')
+    animatePageTransition('/')
+}
+
+const handleClick = e => {
+    if (e.target.matches('img'))
+        window.open(e.target.src)
+
+    if(e.target.matches('.menu')) 
+        e.target.classList.toggle('show-nav')
+
+    if(e.target.matches('.close'))
+        document.querySelector('.menu').classList.toggle('show-nav')
+
+    if (e.target.matches('.link'))
+        animatePageTransition(e)
 }
 
 const animate = () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-
     squares.forEach(box => {
         box.rotate()
         box.drawShadow(light)
@@ -119,7 +140,11 @@ const animate = () => {
         box.draw()
     })
 
-    requestAnimationFrame(animate)
+    if(window.scrollY < window.innerHeight && isAnimating) {
+        requestAnimationFrame(animate)
+    } else {
+        isAnimating = false
+    }
 }
 
 const resize = () => {
@@ -150,15 +175,27 @@ const animateScreenshot = (x, y, el) => {
     const calcX = -(y - box.y - (box.height / 2)) / 10
     const calcY = (x - box.x - (box.width / 2)) / 10
 
-    console.log(calcX)
-
     el.style.transform = `rotateX(${calcX}deg) rotateY(${calcY}deg)`
+}
+
+const handleScroll = () => {
+    if(window.scrollY < window.innerHeight && !isAnimating) {
+        isAnimating = true
+        animate()
+    }
+
+    const sections = document.querySelectorAll('section')
+
+    sections.forEach(sec => {
+        sec.classList.toggle('show-section', sec.getBoundingClientRect().top < 300)
+    })
 }
 
 window.addEventListener("hashchange", router)
 window.addEventListener('mousemove', handleMouseMove)
 window.addEventListener('resize', resize)
-document.addEventListener('click', navigate)
+window.addEventListener('scroll', handleScroll)
+document.addEventListener('click', handleClick)
 
 class Box {
     constructor() {

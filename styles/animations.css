@@ -1,0 +1,46 @@
+@keyframes expand {
+    0% {
+        width: 0;
+        left: 0;
+    }
+    50%{
+        width: 100%;
+        right: 0;
+    }
+    100% {
+        width: 0;
+        right: 0;
+    }
+}
+
+@keyframes show {
+    from { visibility: hidden; }
+    to { visibility: visible; opacity: 1; }
+}
+
+@keyframes swipe-in {
+    from { left: 100vw; }
+    to { left: 0; }
+}
+
+@keyframes swipe-out {
+    from { left: 0; }
+    to { left: -100vw; }
+}
+
+@keyframes scroll {
+    0%, 5% { background-position: 0 0; }
+    95%, 100% { background-position: 0 100%; }
+}
+
+@keyframes error {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    20%, 60% {
+        transform: translateX(5%);
+    }
+    40%, 80% {
+        transform: translateX(-5%);
+    }
+}
